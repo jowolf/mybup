@@ -11,13 +11,13 @@
 
 bupdir=`pwd`/.bup
 
-for d in etc home opt root var usr/local; do {  # home opt root var usr/local; do {
+for d in etc home opt root var usr/local Users private; do {  # home opt root var usr/local; do {
 
   echo
   echo Backing up $d with bup...
   echo
-  sudo bup -d $bupdir index /$d
-  sudo bup -d $bupdir save -n `hostname -s`-$d /$d
+  sudo bup -d $bupdir $@ index /$d --exclude-from exclude-from.txt
+  sudo bup -d $bupdir $@ save -n `hostname -s`-$d /$d
 
 } done
 

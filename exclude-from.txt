@@ -1,0 +1,8 @@
+/private/tmp
+/private/vm
+/tmp
+~/tmp
+~/.local/share/trash
+/var/tmp
+/var/cache/apt/archives
+/var/lib/lxcfs

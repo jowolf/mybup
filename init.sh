@@ -1,12 +1,34 @@
 # Do NOT run this more than once!
+#
+# Run this from root of plugged-in USB backup drive:
+#
+# eg mybup/init.sh
 
-# run this from root of plugged-in USB backup drive:
+if ! which bup; then {
+  echo bup not installed!
+  exit
+} fi
+
+  
+if test -e bup; then {
+  echo ALREADY DONE
+  exit
+} fi
+
 
 mkdir -p bup
 cd bup
 
-# commented out to prevent this being done by accident:
+read -p "This will initialize and DESTROY any existing bup data - Proceed? [y/N]" yn
 
-echo ALREADY DONE
-#sudo bup -d `pwd`/.bup init
+if test $yn != 'y'; then {
+  echo NOT proceeding
+  exit
+} fi
 
+
+sudo bup -d `pwd`/.bup init
+
+../mybup/make-softlinks.sh
+
+echo Done

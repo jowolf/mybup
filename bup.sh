@@ -11,7 +11,23 @@
 
 bupdir=`pwd`/.bup
 
-for d in etc home opt root var usr/local Users private; do {  # home opt root var usr/local; do {
+
+if echo $OSTYPE | grep darwin; then {   # Could also use uname here
+
+  dirs='etc home opt root var usr/local Users private'
+
+} elif echo $OSTYPE | grep linux; then {
+
+  dirs='etc home opt root var usr/local'
+
+} else {
+
+  echo Unknown platform - $OSTYPE
+  exit
+
+} fi
+
+for d in $dirs; do {
 
   echo
   echo Backing up $d with bup...

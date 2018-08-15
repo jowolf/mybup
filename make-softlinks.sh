@@ -4,8 +4,10 @@
 # ../mybup/make-softlinks.sh
 
 ln -s ../mybup/bup.sh .
+ln -s ../mybup/newbup.sh .
 ln -s ../mybup/fup.sh .
 ln -s ../mybup/web.sh .
 ln -s ../mybup/fus.sh .
+ln -s ../mybup/orup.sh .
 ln -s ../mybup/exclude-from.txt .
 

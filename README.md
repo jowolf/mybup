@@ -12,7 +12,20 @@ web.sh - launches mini-web server on 8080, prints URL and PID for surf / kill re
 fus.sh - launches fuse fs on /media/bup, handy for file dates/times & metadata - killall bup-fuse
 
 
-5/27/18 enhance for Mac folders, added hus, web, add mult folders to index & save for better naming, etc
+7/21/18 streamline save to hostname/<date>/dirs
+
+deleted junky comments:
+
+# nfg, doesn't pass throu to sudo:
+#env BUP_DIR=`pwd`/.bup
+#echo
+
+# nfg, doesn't work either:
+#sudo -E env
+#sudo --preserve-env env
+#exit
+
+5/27/18 enhance for Mac folders, added fus, web, add mult folders to index & save for better naming, etc
 
 2/19/18 excluded /var/lib/lxcfs, added make-softlinks.sh
 
